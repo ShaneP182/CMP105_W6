@@ -5,6 +5,7 @@
 #include "Ball.h"
 #include "Missile.h"
 #include "Missile2.h"
+#include "AngryBird.h"
 #include <string.h>
 #include <iostream>
 
@@ -35,4 +36,7 @@ private:
 	sf::Texture missileTexture;
 
 	Missile2 missile2;
+
+	AngryBird birb;
+	sf::Texture birdTexture;
 };
