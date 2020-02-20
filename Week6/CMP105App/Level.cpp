@@ -6,7 +6,25 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	input = in;
 
 	// initialise game objects
+	ballTexture.loadFromFile("gfx/Beach_Ball.png");
+	missileTexture.loadFromFile("gfx/Brian.png");
 
+	ball.setTexture(&ballTexture);
+	ball.setSize(sf::Vector2f(100, 100));
+	ball.setPosition(500, 100);
+	ball.setInput(input);
+	ball.setWindow(window);
+
+	missile.setTexture(&missileTexture);
+	missile.setSize(sf::Vector2f(50, 50));
+	missile.setPosition(0, 0);
+	missile.setWindow(window);
+
+	missile2.setTexture(&missileTexture);
+	missile2.setSize(sf::Vector2f(50, 50));
+	missile2.setPosition(0, 0);
+	missile2.setWindow(window);
+	missile2.setInput(input);
 }
 
 Level::~Level()
@@ -17,19 +35,25 @@ Level::~Level()
 // handle user input
 void Level::handleInput(float dt)
 {
-
+	ball.handleInput(dt);
 }
 
 // Update game objects
 void Level::update(float dt)
 {
-
+	ball.update(dt);
+	missile.update(dt);
+	missile2.update(dt);
 }
 
 // Render level
 void Level::render()
 {
 	beginDraw();
+
+	window->draw(ball);
+	window->draw(missile);
+	window->draw(missile2);
 
 	endDraw();
 }

@@ -2,6 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 #include "Framework/Input.h"
+#include "Ball.h"
+#include "Missile.h"
+#include "Missile2.h"
 #include <string.h>
 #include <iostream>
 
@@ -25,4 +28,11 @@ private:
 	Input* input;
 
 	// More level variables
+	Ball ball;
+	sf::Texture ballTexture;
+
+	Missile missile;
+	sf::Texture missileTexture;
+
+	Missile2 missile2;
 };
